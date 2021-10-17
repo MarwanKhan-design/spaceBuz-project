@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { Range, getTrackBackground } from 'react-range'
 import { spaceBuds } from '../data'
 
-const RangeSlider = ({ filterId, setFilterId }) => {
+const RangeSlider = ({ filterId, setFilterId, data }) => {
   const STEP = 1
   const MIN = 0
-  const MAX = spaceBuds.length
+  const MAX = 100
 
   return (
     <>
@@ -18,7 +18,6 @@ const RangeSlider = ({ filterId, setFilterId }) => {
         min={MIN}
         max={MAX}
         onChange={(values) => {
-          console.log(values)
           setFilterId(values)
         }}
         renderTrack={({ props, children }) => (

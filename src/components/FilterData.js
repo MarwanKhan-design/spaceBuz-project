@@ -2,7 +2,15 @@ import React from 'react'
 import FilterModal from './FilterModal'
 import { spaceBuds } from '../data'
 
-const FilterData = ({ data, setData, showModel, setShowModel }) => {
+const FilterData = ({
+  data,
+  setData,
+  showModel,
+  setShowModel,
+  showData,
+  setShowData,
+  setIsFiltered,
+}) => {
   return (
     <>
       <div className='d-flex justify-content-center'>
@@ -16,7 +24,7 @@ const FilterData = ({ data, setData, showModel, setShowModel }) => {
         <button
           type='button'
           class='btn rounded-pill btn-hover'
-          onClick={() => setData(spaceBuds)}
+          onClick={() => setShowData(data)}
         >
           Reset
         </button>
@@ -26,6 +34,9 @@ const FilterData = ({ data, setData, showModel, setShowModel }) => {
         setShowModel={setShowModel}
         setData={setData}
         data={data}
+        showData={showData}
+        setShowData={setShowData}
+        setIsFiltered={setIsFiltered}
       />
     </>
   )
